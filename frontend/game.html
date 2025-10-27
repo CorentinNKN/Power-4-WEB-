@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Puissance 4 - Halloween Edition</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=halloween2025">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Puissance 4</h1>
+            <nav>
+                <a href="/" class="nav-link">Accueil</a>
+            </nav>
+        </header>
+        
+        <main class="game-main">
+            <div class="game-status">
+                <div class="status-card">
+                    <p class="game-message">{{.Message}}</p>
+                    <div class="player-indicator">
+                        {{if not .GameOver}}
+                            <span class="current-player player-{{.CurrentPlayer}}">
+                                Joueur {{.CurrentPlayer}}
+                            </span>
+                        {{end}}
+                    </div>
+                </div>
+                
+                {{if .GameOver}}
+                    <form action="/reset" method="post" class="reset-form">
+                        <button type="submit" class="reset-button">Nouvelle partie</button>
+                    </form>
+                {{end}}
+            </div>
+
+            <div class="game-board-container">
+                {{if not .GameOver}}
+                    <div class="column-controls">
+                        {{range $i := .GetColumns}}
+                            <form action="/move" method="post" class="column-form">
+                                <input type="hidden" name="column" value="{{$i}}">
+                                <button type="submit" class="column-button" title="Colonne {{$i}}">
+                                    <span class="drop-icon">↓</span>
+                                </button>
+                            </form>
+                        {{end}}
+                    </div>
+                {{end}}
+                
+                <div class="game-board">
+                    {{range $rowIndex, $row := .Board}}
+                        <div class="board-row">
+                            {{range $colIndex, $cell := $row}}
+                                <div class="board-cell">
+                                    {{if eq $cell 1}}
+                                        <div class="game-token player-1"></div>
+                                    {{else if eq $cell 2}}
+                                        <div class="game-token player-2"></div>
+                                    {{else}}
+                                        <div class="empty-slot"></div>
+                                    {{end}}
+                                </div>
+                            {{end}}
+                        </div>
+                    {{end}}
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
