@@ -1,8 +1,8 @@
-# Puissance 4 Web - Version Professionnelle
+# Puissance 4 Web 
 
 Une implémentation moderne et sobre du jeu Puissance 4 avec une architecture séparée backend/frontend.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Power-4-WEB-/
@@ -19,7 +19,7 @@ Power-4-WEB-/
 └── README.md               # Documentation
 ```
 
-## 🚀 Installation et lancement
+##  Installation et lancement
 
 ### Prérequis
 - Go 1.21 ou version supérieure
@@ -35,7 +35,7 @@ go run backend/server.go
 
 Le serveur sera accessible sur `http://localhost:8080`
 
-## 🎮 Fonctionnalités
+##  Fonctionnalités
 
 ### Interface utilisateur
 - **Page d'accueil** : Présentation du jeu et règles
@@ -55,7 +55,7 @@ Le serveur sera accessible sur `http://localhost:8080`
 - `POST /api/move` : Jouer un coup
 - `POST /api/reset` : Nouvelle partie
 
-## 🎯 Routes disponibles
+##  Routes disponibles
 
 | Route | Méthode | Description |
 |-------|---------|-------------|
@@ -67,7 +67,7 @@ Le serveur sera accessible sur `http://localhost:8080`
 | `/api/move` | POST | Jouer un coup (JSON) |
 | `/api/reset` | POST | Nouvelle partie (JSON) |
 
-## 🎨 Design
+##  Design
 
 ### Palette de couleurs
 - **Primaire** : `#2c3e50` (bleu marine)
@@ -82,7 +82,7 @@ Le serveur sera accessible sur `http://localhost:8080`
 - Interface claire et lisible
 - Contrastes respectant les standards d'accessibilité
 
-## 🔧 Développement
+##  Développement
 
 ### Structure du code Go
 - **Séparation des responsabilités** : Logique métier séparée du serveur
@@ -96,7 +96,7 @@ Le serveur sera accessible sur `http://localhost:8080`
 - **Mobile First** : Responsive design
 - **Animations** : Transitions fluides
 
-## 📝 Utilisation de l'API
+##  Utilisation de l'API
 
 ### Exemple avec curl
 ```bash
@@ -110,14 +110,14 @@ curl -X POST -d "column=3" http://localhost:8080/api/move
 curl -X POST http://localhost:8080/api/reset
 ```
 
-## 🚦 Statuts HTTP
+##  Statuts HTTP
 
 - `200` : Succès
 - `400` : Requête invalide (coup impossible)
 - `405` : Méthode non autorisée
 - `500` : Erreur serveur
 
-## 🎯 Améliorations possibles
+##  Améliorations possibles
 
 - Ajout d'un système de score
 - Sauvegarde des parties
