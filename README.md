@@ -25,7 +25,7 @@ Un jeu de Puissance 4 développé entièrement en Go avec une interface web esth
 1. **Joueur 1** (🔴) commence
 2. **Cliquez** sur les boutons ↓ pour faire tomber votre jeton
 3. **Objectif** : Alignez 4 jetons (horizontal, vertical ou diagonal)
-4. **Nouvelle partie** : Cliquez sur "🔄 Nouvelle Partie"
+4. **Nouvelle partie** : Cliquez sur " Nouvelle Partie"
 
 ##  Technologie
 
